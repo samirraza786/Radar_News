@@ -1,0 +1,2 @@
+making news react app using newsapi and react class based components
+API KEY -= 7eaf934a9b114b33b7dbea102643da28
