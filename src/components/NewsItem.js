@@ -7,10 +7,11 @@ export class NewsItem extends Component {
         return (
             <>
                 <div className="card mt-4">
-                    <img src={imageUrl} className="card-img-top" alt="img" style={{height : "300px"}} />
+                    {/* if some news has no imageUrl then set default news image -https://cloudfront-us-east-1.images.arcpublishing.com/cmg/NIXKYYNBC5GSNF6N2TL27IQYLA.jpg*/}
+                    <img src={imageUrl!==null? imageUrl:"https://cloudfront-us-east-1.images.arcpublishing.com/cmg/NIXKYYNBC5GSNF6N2TL27IQYLA.jpg" } className="card-img-top" alt="img" style={{height : "300px"}} />
                         <div className="card-body">
-                            <h5 className="card-title">{title}...</h5>
-                            <p className="card-text">{description}...</p>
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-text">{description}</p>
                             <a href={newsUrl} target = "_blank" className="btn btn-primary">Read More</a>
                         </div>
                 </div>
