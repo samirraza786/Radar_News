@@ -4,3 +4,7 @@ API KEY -= 7eaf934a9b114b33b7dbea102643da28
 https://newsapi.org/v2/everything?q=Apple&from=2022-08-29&sortBy=popularity&apiKey=7eaf934a9b114b33b7dbea102643da28
 https://newsapi.org/v2/everything?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket
 https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket
+
+Not all articles are one same page , some on other, so we need to use next and previoues buttons
+by default page is 1
+https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket&page=2 --> means 2nd page
