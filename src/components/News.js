@@ -16,41 +16,44 @@ export class News extends Component {
 
     //this liefecycle method
     // it will run after render() method run
-    async componentDidMount() {
-        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=dbe57b028aeb41e285a226a94865f7a7&page=1pageSize=20"; //setting page and page size so that initially it start with page =1 and articles on each page = 20
+    async componentDidMount(){ 
+        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=7eaf934a9b114b33b7dbea102643da28&page=1pageSize=20";
         let data = await fetch(url);
         let parsedData = await data.json()
-        // console.log(parsedData); 
-        this.setState({articles: parsedData.articles, totalResults: parsedData.totalResults});
+        console.log(parsedData); 
+        this.setState({articles: parsedData.articles, totalResults: parsedData.totalResults})
     }
 
-    handlePrevClick = async () => {
-        // console.log("Previous");
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page - 1}&pageSize=20`;
+     handlePrevClick = async ()=>{
+        console.log("Previous");
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7eaf934a9b114b33b7dbea102643da28&page=${this.state.page - 1}&pageSize=20`;
         let data = await fetch(url);
-        let parsedData = await data.json();
+        let parsedData = await data.json()
+        console.log(parsedData);  
         this.setState({
             page: this.state.page - 1,
             articles: parsedData.articles
         })
 
     }
-
-    handleNextClick = async () => {
-        // console.log("Next");
-        if (this.state.page + 1 > Math.ceil(this.state.totalResults / 20)) {
+    
+     handleNextClick = async ()=>{
+        console.log("Next"); 
+        if (this.state.page + 1 > Math.ceil(this.state.totalResults/20)){
 
         }
-        else {
-            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page + 1}&pageSize=20`;
+        else{
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7eaf934a9b114b33b7dbea102643da28&page=${this.state.page + 1}&pageSize=20`;
             let data = await fetch(url);
-            let parsedData = await data.json();
+            let parsedData = await data.json()
+            console.log(parsedData);  
             this.setState({
                 page: this.state.page + 1,
                 articles: parsedData.articles
             })
-        }
     }
+    }
+
 
     render() {
         // inside render props
