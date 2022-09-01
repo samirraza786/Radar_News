@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 
 
 
+
 class App extends Component {
   render() {
     return (
@@ -12,7 +13,7 @@ class App extends Component {
 
         <Navbar />
 
-        <News />
+        <News pageSize = {6} country = "in" category = "sports"  />
 
       </>
     )

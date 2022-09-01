@@ -8,4 +8,8 @@ https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=c
 
 Not all articles are one same page , some on other, so we need to use next and previoues buttons
 by default page is 1
-https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket&page=2 --> means 2nd page
+https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket&page=2 --> means 2nd 
+
+
+All articles about Tesla from the last month, sorted by recent first
+https://newsapi.org/v2/top-headlines?q=tesla&from=2022-08-01&sortBy=publishedAt&apiKey=f04d7a9c8c264a01a242339339ec891e
