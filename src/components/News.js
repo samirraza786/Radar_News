@@ -33,7 +33,7 @@ export class News extends Component {
     // it will run after render() method run
 
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=1&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=f04d7a9c8c264a01a242339339ec891e&page=1&pageSize=${this.props.pageSize}`;
 
         // loading will be true when we hit url
         this.setState({ loading: true });
@@ -48,8 +48,8 @@ export class News extends Component {
     }
 
     handlePrevClick = async () => {
-        console.log("Previous");
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        // console.log("Previous");
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=f04d7a9c8c264a01a242339339ec891e&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
 
         // loading will be true when we hit url
         this.setState({ loading: true });
@@ -64,9 +64,9 @@ export class News extends Component {
     }
 
     handleNextClick = async () => {
-        console.log("Next");
+        // console.log("Next");
         if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=f04d7a9c8c264a01a242339339ec891e&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
             // loading will be true when we hit url
             this.setState({ loading: true });
             let data = await fetch(url);
@@ -97,7 +97,7 @@ export class News extends Component {
                     </div>
                     {/* Not all articles are one same page , some on other, so we need to use next and previoues buttons */}
                     {/* by default page is 1 */}
-                    {/* https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket&page=2 --> means 2nd page */}
+                    {/* https://newsapi.org/v2/top-headlines?apiKey=f04d7a9c8c264a01a242339339ec891e&q=cricket&page=2 --> means 2nd page */}
                     <div className="container-fluid d-grid gap-2 d-md-flex justify-content-md-between mt-4">
                         <button disabled={this.state.page <= 1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}> &larr; Previous</button>
                         <button type="button" disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
