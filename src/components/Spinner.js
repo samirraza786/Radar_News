@@ -5,7 +5,7 @@ export class spinner extends Component {
   render() {
     return (
       <div>
-        <img src={loading} alt="loading" />
+        <img src={loading} alt="loading" style={{margin:"50px 0"}} />
       </div>
     )
   }
