@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   pageSize = 9;
-  apiKey = process.env.REACT_APP_NEWS_API;
+  apiKey = "c3c400ee051a4b249f6a3696e4a8358b";
   // make this as arrow function
   setProgress = (progress) => {
     this.setState({
