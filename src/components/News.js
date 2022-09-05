@@ -1,10 +1,11 @@
+
+
 import React, { Component } from 'react';
 import NewsItem from './NewsItem';
 import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 // https://www.npmjs.com/package/react-infinite-scroll-component
-
 // https://codesandbox.io/s/yk7637p62z?file=/src/index.js
 
 
@@ -12,7 +13,7 @@ export class News extends Component {
     // default values
     static defaultProps = {
         country: 'in',
-        pageSize: 8,
+        pageSize: 9,
         category: 'general'
     }
 
@@ -43,18 +44,22 @@ export class News extends Component {
     //this liefecycle method
     // it will run after render() method run
     async componentDidMount() {
+        this.props.setProgress(10); // initially 10
         const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=1&pageSize=${this.props.pageSize}`;
 
         // loading will be true when we hit url
         this.setState({ loading: true });
         let data = await fetch(url);
+        this.props.setProgress(30);
         let parsedData = await data.json()
         // console.log(parsedData);
+        this.props.setProgress(70);
         this.setState({
             articles: parsedData.articles,
             totalResults: parsedData.totalResults,
             loading: false //after getting data from url loading will be false
         });
+        this.props.setProgress(100); //100 after loading complete
     }
 
 
