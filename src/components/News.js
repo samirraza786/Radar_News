@@ -45,7 +45,7 @@ export class News extends Component {
     // it will run after render() method run
     async componentDidMount() {
         this.props.setProgress(10); // initially 10
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=1&pageSize=${this.props.pageSize}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=${this.props.apiKey}&page=1&pageSize=${this.props.pageSize}`;
 
         // loading will be true when we hit url
         this.setState({ loading: true });
@@ -65,7 +65,7 @@ export class News extends Component {
 
     fetchMoreData = async () => {
         this.setState({page : this.state.page+1}); //increment page each time we add component
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=7eaf934a9b114b33b7dbea102643da28&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&sortBy=publishedAt&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json()
         this.setState({

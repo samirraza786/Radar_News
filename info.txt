@@ -1,6 +1,7 @@
 making news react app using newsapi and react class based components
 API KEY -= 7eaf934a9b114b33b7dbea102643da28
-API KEY f04d7a9c8c264a01a242339339ec891e
+API KEY=  f04d7a9c8c264a01a242339339ec891e
+API KEY=  c3c400ee051a4b249f6a3696e4a8358b
 
 https://newsapi.org/v2/everything?q=Apple&from=2022-08-29&sortBy=popularity&apiKey=7eaf934a9b114b33b7dbea102643da28
 https://newsapi.org/v2/everything?apiKey=7eaf934a9b114b33b7dbea102643da28&q=cricket
@@ -13,25 +14,3 @@ https://newsapi.org/v2/top-headlines?apiKey=7eaf934a9b114b33b7dbea102643da28&q=c
 
 All articles about Tesla from the last month, sorted by recent first
 https://newsapi.org/v2/top-headlines?q=tesla&from=2022-08-01&sortBy=publishedAt&apiKey=f04d7a9c8c264a01a242339339ec891e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
